@@ -1,0 +1,55 @@
+﻿<Page x:Class="isis_lab_1.page_Clients_Edit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:isis_lab_1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="page_Clients_Edit">
+
+    <Grid Margin="50" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="ID" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" Name="textBlock_ID"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="FirstName" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="LastName" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Patronymic" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Birthday" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="RegistrationDate" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Phone" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="GenderCode" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="0" Text="PhotoPath" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"></TextBlock>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding ID}" Name="textblock_ID_value"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding FirstName}"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding LastName}"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding Patronymic}"></TextBox>
+        <DatePicker Grid.Row="4" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" SelectedDate="{Binding Birthday}"></DatePicker>
+        <TextBlock Grid.Row="5" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding RegistrationDate}"></TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding Email}"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding Phone}" Name="textbox_phone"></TextBox>
+        <ComboBox Grid.Row="8" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" Name="combo_gender" HorizontalAlignment="Left" Margin="5" SelectedValue="{Binding GenderCode}"></ComboBox>
+        <TextBox Grid.Row="9" Grid.Column="1" MinWidth="100" Width="auto" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Text="{Binding PhotoPath}"></TextBox>
+
+        <Button Content="Submit" x:Name="submit_btn" Click="submit_btn_Click" Grid.Column="0" Grid.Row="10" Width="auto" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Button>
+        <Button Content="Cancel" x:Name="cancel_btn" Click="cancel_btn_Click" Grid.Column="1" Grid.Row="10" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></Button>
+    </Grid>
+</Page>

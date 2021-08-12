@@ -35,8 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +65,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Client.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_main.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentByService.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="page_Clients_Edit.xaml.cs">
+      <DependentUpon>page_Clients_Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page_Service.xaml.cs">
+      <DependentUpon>page_Service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +117,38 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="db_main.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_main.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_main.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_main.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="page_Clients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_Clients_Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_Service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager.cs" />
+    <Compile Include="page_Clients.xaml.cs">
+      <DependentUpon>page_Clients.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +166,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="db_main.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db_main.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="db_main.edmx.diagram">
+      <DependentUpon>db_main.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +181,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\service_layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\service_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\diz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rulevoe-upravlenie-avtomobilya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\transmission.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\АКПП.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Вариатор.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Выхлопная система.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ГУР.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Двигатель.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Дополнительные услуги.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Кондиционер.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\КПП.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Подвеска.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Сцепление.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Техническое обслуживание.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Топливная система.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Шиномонтаж.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Электрика.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db_main.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_main.edmx</DependentUpon>
+      <LastGenOutput>db_main.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="db_main.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>db_main.edmx</DependentUpon>
+      <LastGenOutput>db_main.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

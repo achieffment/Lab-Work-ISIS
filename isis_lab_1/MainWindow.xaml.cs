@@ -23,6 +23,20 @@ namespace isis_lab_1
         public MainWindow()
         {
             InitializeComponent();
+
+            mainFrame.Navigate(new page_Service());
+            //mainFrame.Navigate(new page_Clients());
+            Manager.MainFrame = mainFrame;
+        }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new page_Clients_Edit(null));
+        }
+
+        private void rmvBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // rmvBtn.Visibility = Visibility.Hidden;
         }
     }
 }
