@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Введите пароль" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" Margin="5"></TextBlock>
-        <PasswordBox Grid.Row="2" Grid.Column="1" Margin="5"></PasswordBox>
+        <PasswordBox Grid.Row="2" Grid.Column="1" Margin="5" Name="passwordBox_input"></PasswordBox>
         <Button Content="Принять" Grid.Row="3" Grid.Column="1" Margin="5" Name="btn_accept" Click="btn_accept_Click"></Button>
         <Button Content="Назад" Grid.Row="4" Grid.Column="1" Margin="5" Name="btn_cancel" Click="btn_cancel_Click"></Button>
     </Grid>

@@ -9,6 +9,10 @@ namespace isis_lab_1
 {
     class Manager
     {
-        public static Frame MainFrame { get; set; } 
+        public static Frame MainFrame { get; set; }
+
+        public static bool isVisibleAdminPage = true;
+
+        public static bool isVisibleServicesPage = true;
     }
 }

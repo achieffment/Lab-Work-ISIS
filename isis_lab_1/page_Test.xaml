@@ -39,10 +39,12 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Content="Back" Name="btn_Back" Click="btn_Back_Click"></Button>
             <Button Content="Test" Grid.Column="1" Name="btn_Test" Click="btn_Test_Click"></Button>
             <Button Content="Test2" Grid.Column="2" Name="btn_Test2" Click="btn_Test2_Click"></Button>
+            <Button Content="Test3" Grid.Column="3" Name="btn_Test3" Click="btn_Test3_Click"></Button>
         </Grid>
     </Grid>
 </Page>

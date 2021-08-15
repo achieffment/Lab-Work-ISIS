@@ -95,6 +95,12 @@
     <Compile Include="page_new_Services.xaml.cs">
       <DependentUpon>page_new_Services.xaml</DependentUpon>
     </Compile>
+    <Compile Include="page_new_Services_Admin.xaml.cs">
+      <DependentUpon>page_new_Services_Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page_new_Services_Admin_Edit.xaml.cs">
+      <DependentUpon>page_new_Services_Admin_Edit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="page_Service.xaml.cs">
       <DependentUpon>page_Service.xaml</DependentUpon>
     </Compile>
@@ -157,6 +163,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="page_new_Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_new_Services_Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_new_Services_Admin_Edit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

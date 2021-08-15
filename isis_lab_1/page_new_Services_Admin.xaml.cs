@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 namespace isis_lab_1
 {
     /// <summary>
-    /// Логика взаимодействия для page_new_Services.xaml
+    /// Логика взаимодействия для page_new_Services_Edit.xaml
     /// </summary>
-    public partial class page_new_Services : Page
+    public partial class page_new_Services_Admin : Page
     {
-        public page_new_Services()
+        public page_new_Services_Admin()
         {
             InitializeComponent();
             listView_service.ItemsSource = poday_na_43Entities1.GetContext().Services.ToList();
@@ -37,12 +37,6 @@ namespace isis_lab_1
             comboBox_findType.Items.Add("Discount 15-30%");
             comboBox_findType.Items.Add("Discount 30-70%");
             comboBox_findType.Items.Add("Discount 70-100%");
-        }
-
-        private void btn_AdminEnter_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.isVisibleServicesPage = false;
-            Manager.MainFrame.Navigate(new page_adminLogin());
         }
 
         private static T GetFrameworkElementByName<T>(FrameworkElement referenceElement) where T : FrameworkElement
@@ -90,7 +84,7 @@ namespace isis_lab_1
                     textBlock_cost.Inlines.Add(strikedText);
 
                     textBlock_discountCost.Text = "= " + (cost - ((cost / 100) * double.Parse(textBlock_discount.Text, System.Globalization.CultureInfo.InvariantCulture) * 100)).ToString() + " Рублей";
-                } 
+                }
                 else
                 {
                     textBlock_cost.Text = "Стоимость: " + textBlock_cost.Text;
@@ -173,9 +167,48 @@ namespace isis_lab_1
             }
         }
 
+        private void btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.isVisibleAdminPage = false;
+            Manager.MainFrame.Navigate(new page_new_Services_Admin_Edit(null));
+        }
+
+        private void btn_edit_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.isVisibleAdminPage = false;
+            Manager.MainFrame.Navigate(new page_new_Services_Admin_Edit((sender as Button).DataContext as Service));
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            Service serviceToDelete = (sender as Button).DataContext as Service;
+            if (MessageBox.Show($"Do you really want to delete this position?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    poday_na_43Entities1.GetContext().Services.Remove(serviceToDelete);
+                    poday_na_43Entities1.GetContext().SaveChanges();
+                    MessageBox.Show("Removed successfully!");
+                    poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                    listView_service.ItemsSource = poday_na_43Entities1.GetContext().Services.ToList();
+                    UpdateService(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void btn_goBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.isVisibleAdminPage = false;
+            Manager.MainFrame.GoBack();
+        }
+
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (Manager.isVisibleServicesPage)
+            if (Manager.isVisibleAdminPage)
             {
                 poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 listView_service.ItemsSource = poday_na_43Entities1.GetContext().Services.ToList();

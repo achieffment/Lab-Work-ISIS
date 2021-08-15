@@ -91,5 +91,32 @@ namespace isis_lab_1
 
             //MessageBox.Show(str.ToString());
         }
+
+        private void btn_Test3_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder str = new StringBuilder();
+
+            string s = "0.2";
+            string s1 = "asd";
+            string s2 = "0,2";
+            string s3 = "0";
+
+            string s4 = "52.52";
+            double d4 = double.Parse(s4, System.Globalization.CultureInfo.InvariantCulture);
+            string s5 = Convert.ToInt32(d4).ToString();
+
+            str.AppendLine(double.TryParse(s, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _).ToString());
+            str.AppendLine(double.TryParse(s1, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _).ToString());
+            str.AppendLine(double.TryParse(s2, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _).ToString());
+            str.AppendLine(double.TryParse(s3, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _).ToString());
+
+            str.AppendLine(s5);
+
+            //str.AppendLine(double.Parse(s, System.Globalization.CultureInfo.InvariantCulture).ToString());
+            //str.AppendLine(double.Parse(s1, System.Globalization.CultureInfo.InvariantCulture).ToString());
+            //str.AppendLine(double.Parse(s2, System.Globalization.CultureInfo.InvariantCulture).ToString());
+
+            MessageBox.Show(str.ToString());
+        }
     }
 }

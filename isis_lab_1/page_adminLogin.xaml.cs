@@ -27,11 +27,19 @@ namespace isis_lab_1
 
         private void btn_accept_Click(object sender, RoutedEventArgs e)
         {
-
+            if (passwordBox_input.Password.Contains("0000"))
+            {
+                Manager.isVisibleAdminPage = true;
+                Manager.MainFrame.Navigate(new page_new_Services_Admin());
+            } else
+            {
+                MessageBox.Show("Incorrect password. Try again!");
+            }
         }
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
         {
+            Manager.isVisibleServicesPage = true;
             Manager.MainFrame.GoBack();
         }
     }
