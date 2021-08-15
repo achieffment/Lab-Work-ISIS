@@ -24,19 +24,22 @@ namespace isis_lab_1
         {
             InitializeComponent();
 
-            mainFrame.Navigate(new page_Service());
-            //mainFrame.Navigate(new page_Clients());
+            mainFrame.Navigate(new page_Welcome());
             Manager.MainFrame = mainFrame;
+
+            //mainFrame.Navigate(new page_Service());
+            ////mainFrame.Navigate(new page_Clients());
+            //Manager.MainFrame = mainFrame;
         }
 
-        private void addBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new page_Clients_Edit(null));
-        }
+        //private void addBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Manager.MainFrame.Navigate(new page_Clients_Edit(null));
+        //}
 
-        private void rmvBtn_Click(object sender, RoutedEventArgs e)
-        {
-            // rmvBtn.Visibility = Visibility.Hidden;
-        }
+        //private void rmvBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // rmvBtn.Visibility = Visibility.Hidden;
+        //}
     }
 }

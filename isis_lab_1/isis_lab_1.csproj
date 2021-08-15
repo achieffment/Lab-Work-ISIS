@@ -56,6 +56,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -85,11 +86,23 @@
     <Compile Include="Manufacturer.cs">
       <DependentUpon>db_main.tt</DependentUpon>
     </Compile>
+    <Compile Include="page_adminLogin.xaml.cs">
+      <DependentUpon>page_adminLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="page_Clients_Edit.xaml.cs">
       <DependentUpon>page_Clients_Edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="page_new_Services.xaml.cs">
+      <DependentUpon>page_new_Services.xaml</DependentUpon>
+    </Compile>
     <Compile Include="page_Service.xaml.cs">
       <DependentUpon>page_Service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page_Test.xaml.cs">
+      <DependentUpon>page_Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page_Welcome.xaml.cs">
+      <DependentUpon>page_Welcome.xaml</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>db_main.tt</DependentUpon>
@@ -131,6 +144,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="page_adminLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="page_Clients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,7 +156,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="page_new_Services.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="page_Service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page_Welcome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
