@@ -215,5 +215,11 @@ namespace isis_lab_1
                 UpdateService(false);
             }
         }
+
+        private void btn_record_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.isVisibleAdminPage = false;
+            Manager.MainFrame.Navigate(new page_new_Services_Admin_Record((sender as Button).DataContext as Service));
+        }
     }
 }

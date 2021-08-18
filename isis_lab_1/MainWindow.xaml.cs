@@ -27,6 +27,8 @@ namespace isis_lab_1
             mainFrame.Navigate(new page_Welcome());
             Manager.MainFrame = mainFrame;
 
+            Manager.mainWindow = this;
+
             //mainFrame.Navigate(new page_Service());
             ////mainFrame.Navigate(new page_Clients());
             //Manager.MainFrame = mainFrame;

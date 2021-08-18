@@ -14,5 +14,7 @@ namespace isis_lab_1
         public static bool isVisibleAdminPage = true;
 
         public static bool isVisibleServicesPage = true;
+
+        public static MainWindow mainWindow;
     }
 }

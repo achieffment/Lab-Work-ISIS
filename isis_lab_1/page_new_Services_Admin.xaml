@@ -86,10 +86,12 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
 
-                            <Button Content="Редактировать" Name="btn_edit" Click="btn_edit_Click" Margin="5"></Button>
-                            <Button Content="Удалить" Name="btn_delete" Click="btn_delete_Click" Grid.Row="1" Margin="5"></Button>
+                            <Button Content="Записать" Name="btn_record" Click="btn_record_Click" Margin="5"></Button>
+                            <Button Content="Редактировать" Name="btn_edit" Click="btn_edit_Click" Grid.Row="1" Margin="5"></Button>
+                            <Button Content="Удалить" Name="btn_delete" Click="btn_delete_Click" Grid.Row="2" Margin="5"></Button>
                         </Grid>
                     </Grid>
                 </DataTemplate>

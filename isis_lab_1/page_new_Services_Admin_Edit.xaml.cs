@@ -54,22 +54,26 @@ namespace isis_lab_1
 
             if (string.IsNullOrEmpty(_currentService.Title))
             {
-                errors.AppendLine("Title can not be empty");
+                errors.AppendLine("Title can not be empty.");
+            } else
+            {
+                if (poday_na_43Entities1.GetContext().Services.Where(p => p.Title == _currentService.Title).FirstOrDefault() != null)
+                    errors.AppendLine("Title must be uniq.");
             }
 
             if (!int.TryParse(textBox_cost.Text, out _) || _currentService.Cost <= 0)
             {
-                errors.AppendLine("Cost can not be zero or less and must be numeric");
+                errors.AppendLine("Cost can not be zero or less and must be numeric.");
             }
 
-            if (!int.TryParse(textBox_durationInSeconds.Text, out _) || _currentService.DurationInSeconds == 0)
+            if (!int.TryParse(textBox_durationInSeconds.Text, out _) || _currentService.DurationInSeconds == 0 || _currentService.DurationInSeconds > 14400)
             {
-                errors.AppendLine("DurationInSeconds can not be zero and must be numeric");
+                errors.AppendLine("DurationInSeconds can not be zero and must be numeric. Also it can not be more than 14400 seconds.");
             }
 
             if (!double.TryParse(textBox_discount.Text, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _) || _currentService.Discount < 0 || _currentService.Discount > 1)
             {
-                errors.AppendLine("Discount can not be less than zero and must be numeric. Also discount must be less or 1. Use dot instead of ','");
+                errors.AppendLine("Discount can not be less than zero and must be numeric. Also discount must be less or 1. Use dot instead of ','.");
             }
 
             if (errors.Length != 0)
@@ -94,6 +98,12 @@ namespace isis_lab_1
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
+        }
+
+        private void btn_image_Click(object sender, RoutedEventArgs e)
+        {
+            window_SelectImage win = new window_SelectImage(this);
+            win.Show();
         }
     }
 }

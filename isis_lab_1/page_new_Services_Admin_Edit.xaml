@@ -22,7 +22,7 @@
             <RowDefinition Height="0.2*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="1" Grid.Column="1" Margin="5">
+        <Image Grid.Row="1" Grid.Column="1" Margin="5" Name="image">
             <Image.Source>
                 <Binding Path="MainImagePath">
                     <Binding.TargetNullValue>
@@ -69,8 +69,17 @@
             <TextBlock Name="textBlock_mainImagePath" Grid.Row="6" Text="Картринка"></TextBlock>
             <TextBox Name="textBox_mainImagePath" Grid.Column="1" Grid.Row="6" MinWidth="150" Text="{Binding MainImagePath}" Margin="5"></TextBox>
 
-            <Button Content="Назад" Grid.Row="7" Name="btn_goBack" Click="btn_goBack_Click" Margin="5"></Button>
-            <Button Content="Сохранить" Grid.Row="7" Grid.Column="1" Name="btn_save" Click="btn_save_Click" Margin="5"></Button>
+            <Grid Grid.Row="7" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Назад" Name="btn_goBack" Click="btn_goBack_Click" Margin="5"></Button>
+                <Button Content="Картинки" Grid.Column="1" Name="btn_image" Click="btn_image_Click" Margin="5"></Button>
+                <Button Content="Сохранить" Grid.Column="2" Name="btn_save" Click="btn_save_Click" Margin="5"></Button>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
