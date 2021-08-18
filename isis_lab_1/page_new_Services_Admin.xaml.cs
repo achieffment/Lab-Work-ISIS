@@ -182,7 +182,7 @@ namespace isis_lab_1
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
             Service serviceToDelete = (sender as Button).DataContext as Service;
-            if (MessageBox.Show($"Do you really want to delete this position?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Do you really want to delete this position?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
                 {
@@ -220,6 +220,12 @@ namespace isis_lab_1
         {
             Manager.isVisibleAdminPage = false;
             Manager.MainFrame.Navigate(new page_new_Services_Admin_Record((sender as Button).DataContext as Service));
+        }
+
+        private void btn_Records_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.isVisibleAdminPage = false;
+            Manager.MainFrame.Navigate(new page_new_Services_Admin_nearestRecords());
         }
     }
 }

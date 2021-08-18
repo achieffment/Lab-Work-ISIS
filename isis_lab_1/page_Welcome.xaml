@@ -25,10 +25,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Content="Войти" Grid.Column="1" Name="btn_Enter" Click="btn_Enter_Click"></Button>
-            <Button Content="Test" Grid.Column="2" Name="btn_Test" Click="btn_Test_Click"></Button>
         </Grid>
     </Grid>
 </Page>

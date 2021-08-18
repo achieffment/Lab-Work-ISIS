@@ -102,14 +102,11 @@
     <Compile Include="page_new_Services_Admin_Edit.xaml.cs">
       <DependentUpon>page_new_Services_Admin_Edit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="page_new_Services_Admin_nearestRecords.xaml.cs">
+      <DependentUpon>page_new_Services_Admin_nearestRecords.xaml</DependentUpon>
+    </Compile>
     <Compile Include="page_new_Services_Admin_Record.xaml.cs">
       <DependentUpon>page_new_Services_Admin_Record.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="page_Service.xaml.cs">
-      <DependentUpon>page_Service.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="page_Test.xaml.cs">
-      <DependentUpon>page_Test.xaml</DependentUpon>
     </Compile>
     <Compile Include="page_Welcome.xaml.cs">
       <DependentUpon>page_Welcome.xaml</DependentUpon>
@@ -181,15 +178,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="page_new_Services_Admin_nearestRecords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="page_new_Services_Admin_Record.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page_Service.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="page_Test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

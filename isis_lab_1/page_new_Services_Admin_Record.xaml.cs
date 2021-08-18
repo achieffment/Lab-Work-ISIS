@@ -130,7 +130,7 @@ namespace isis_lab_1
                     time_min = "0" + time_min;
                 }
 
-                _currentRecord.StartTime = datePicker_date.SelectedDate.Value.Year.ToString() + "-" + month + "-" + day + " " + time_hour + ":" + time_min;
+                _currentRecord.StartTime = datePicker_date.SelectedDate.Value.Year.ToString() + "-" + month + "-" + day + " " + time_hour + ":" + time_min + ":00.000";
                 _currentRecord.Comment = textBox_comment.Text;
 
                 poday_na_43Entities1.GetContext().ClientServices.Add(_currentRecord);

@@ -29,10 +29,5 @@ namespace isis_lab_1
         {
             Manager.MainFrame.Navigate(new page_new_Services());
         }
-
-        private void btn_Test_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new page_Test());
-        }
     }
 }
