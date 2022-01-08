@@ -17,6 +17,7 @@
 
         <Image Source="Resources/service_logo.png"></Image>
         <TextBlock Text="Подай на 43" Grid.Row="1" FontSize="32" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Button Visibility="Hidden" Margin="0 -220 600 0" Height="25" Width="100" Content="Пользователи" Name="btn_users" Click="btn_users_Click"></Button>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>

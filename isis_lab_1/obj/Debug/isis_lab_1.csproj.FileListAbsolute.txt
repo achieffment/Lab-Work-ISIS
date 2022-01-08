@@ -99,3 +99,5 @@ C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\isis_lab_1.csproj.Co
 C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\isis_lab_1.csproj.CopyComplete
 C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\isis_lab_1.exe
 C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\isis_lab_1.pdb
+C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\page_users.g.cs
+C:\Users\rainb\Source\Repos\isis_lab_1\isis_lab_1\obj\Debug\page_users.baml
