@@ -37,7 +37,7 @@ namespace isis_lab_1
 
             textBox_durationInMinutes.Text = (selectedService.DurationInSeconds / 60).ToString();
 
-            comboBox_name.ItemsSource = poday_na_43Entities1.GetContext().Clients.Select(column => column.ID + " " + column.FirstName + " " + column.LastName + " " + column.Patronymic).ToList();
+            comboBox_name.ItemsSource = poday_na_43Entities2.GetContext().Clients.Select(column => column.ID + " " + column.FirstName + " " + column.LastName + " " + column.Patronymic).ToList();
 
             textBox_endTimeHours.MaxLength = 2;
             textBox_endTimeMinutes.MaxLength = 2;
@@ -47,6 +47,14 @@ namespace isis_lab_1
         {
             Manager.isVisibleAdminPage = true;
             Manager.MainFrame.GoBack();
+        }
+
+        public bool new_service_admin_record_check_errors(StringBuilder errors)
+        {
+            if (errors.Length != 0)
+                return true;
+            else
+                return false;
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -96,7 +104,7 @@ namespace isis_lab_1
                 }
             }
             
-            if (errors.Length != 0)
+            if (new_service_admin_record_check_errors(errors))
             {
                 MessageBox.Show(errors.ToString());
                 return;
@@ -133,10 +141,10 @@ namespace isis_lab_1
                 _currentRecord.StartTime = datePicker_date.SelectedDate.Value.Year.ToString() + "-" + month + "-" + day + " " + time_hour + ":" + time_min + ":00.000";
                 _currentRecord.Comment = textBox_comment.Text;
 
-                poday_na_43Entities1.GetContext().ClientServices.Add(_currentRecord);
+                poday_na_43Entities2.GetContext().ClientServices.Add(_currentRecord);
                 try
                 {
-                    poday_na_43Entities1.GetContext().SaveChanges();
+                    poday_na_43Entities2.GetContext().SaveChanges();
                     Manager.isVisibleAdminPage = true;
                     Manager.MainFrame.GoBack();
                 }

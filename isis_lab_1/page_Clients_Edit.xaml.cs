@@ -32,7 +32,7 @@ namespace isis_lab_1
             }
 
             DataContext = _currentClient;
-            combo_gender.ItemsSource = poday_na_43Entities1.GetContext().Genders.Select(column => column.Code).ToList();
+            combo_gender.ItemsSource = poday_na_43Entities2.GetContext().Genders.Select(column => column.Code).ToList();
 
             if (string.IsNullOrEmpty(_currentClient.RegistrationDate))
             {
@@ -47,38 +47,40 @@ namespace isis_lab_1
             textbox_phone.MaxLength = 20;
         }
 
+        public bool check_firstName(String firstName)
+        {
+            if (String.IsNullOrEmpty(firstName))
+                return true;
+            else
+                return false;
+        }
+
+        public bool check_empty_editField(String field)
+        {
+            if (String.IsNullOrEmpty(field))
+                return true;
+            else
+                return false;
+        }
+
         private void submit_btn_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
 
-            if (string.IsNullOrEmpty(_currentClient.FirstName))
-            {
+            if (check_empty_editField(_currentClient.FirstName))
                 errors.AppendLine("FirstName can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.LastName))
-            {
-                errors.AppendLine("LastName can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.Patronymic))
-            {
+            if (check_empty_editField(_currentClient.LastName))
+                errors.AppendLine("FirstName can not be empty");
+            if (check_empty_editField(_currentClient.Patronymic))
                 errors.AppendLine("Patronymic can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.Birthday))
-            {
+            if (check_empty_editField(_currentClient.Birthday))
                 errors.AppendLine("Birthday can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.Email))
-            {
+            if (check_empty_editField(_currentClient.Email))
                 errors.AppendLine("Email can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.Phone))
-            {
+            if (check_empty_editField(_currentClient.Phone))
                 errors.AppendLine("Phone can not be empty");
-            }
-            if (string.IsNullOrEmpty(_currentClient.GenderCode))
-            {
+            if (check_empty_editField(_currentClient.GenderCode))
                 errors.AppendLine("GenderCode can not be empty");
-            }
 
             if (errors.Length != 0)
             {
@@ -90,11 +92,11 @@ namespace isis_lab_1
 
                 if (_currentClient.ID == 0)
                 {
-                    poday_na_43Entities1.GetContext().Clients.Add(_currentClient);
+                    poday_na_43Entities2.GetContext().Clients.Add(_currentClient);
                 }
                 try
                 {
-                    poday_na_43Entities1.GetContext().SaveChanges();
+                    poday_na_43Entities2.GetContext().SaveChanges();
                     Manager.MainFrame.GoBack();
                 }
                 catch (Exception ex)

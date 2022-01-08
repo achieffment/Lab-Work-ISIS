@@ -25,7 +25,7 @@ namespace isis_lab_1
         public page_new_Services()
         {
             InitializeComponent();
-            listView_service.ItemsSource = poday_na_43Entities1.GetContext().Services.ToList();
+            listView_service.ItemsSource = poday_na_43Entities2.GetContext().Services.ToList();
             comboBox_findType.Items.Add("None");
             comboBox_findType.Items.Add("Title");
             comboBox_findType.Items.Add("Cost inc");
@@ -114,7 +114,7 @@ namespace isis_lab_1
 
         private void UpdateService(bool findFilter)
         {
-            var currentService = poday_na_43Entities1.GetContext().Services.ToList();
+            var currentService = poday_na_43Entities2.GetContext().Services.ToList();
             if (findFilter && !string.IsNullOrEmpty(textBox_findText.Text))
             {
                 currentService = currentService.Where(p => p.Title.ToLower().Contains(textBox_findText.Text.ToLower())).ToList();
@@ -124,7 +124,7 @@ namespace isis_lab_1
             {
                 if (comboBox_findType.SelectedIndex == 0)
                 {
-                    currentService = poday_na_43Entities1.GetContext().Services.ToList();
+                    currentService = poday_na_43Entities2.GetContext().Services.ToList();
                 }
                 if (comboBox_findType.SelectedIndex == 1)
                 {
@@ -177,8 +177,8 @@ namespace isis_lab_1
         {
             if (Manager.isVisibleServicesPage)
             {
-                poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                listView_service.ItemsSource = poday_na_43Entities1.GetContext().Services.ToList();
+                poday_na_43Entities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                listView_service.ItemsSource = poday_na_43Entities2.GetContext().Services.ToList();
                 UpdateService(false);
             }
         }

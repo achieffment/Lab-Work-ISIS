@@ -27,14 +27,14 @@ namespace isis_lab_1
         {
             InitializeComponent();
             pageWin = win;
-            listView_images.ItemsSource = poday_na_43Entities1.GetContext().ServicePhotoes.ToList();
+            listView_images.ItemsSource = poday_na_43Entities2.GetContext().ServicePhotoes.ToList();
         }
 
         private readonly ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
 
         private void btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            string findRec = poday_na_43Entities1.GetContext().ServicePhotoes.Where(p => p.ServiceID == listView_images.SelectedIndex+1).Select(p => p.PhotoPath).FirstOrDefault().ToString();
+            string findRec = poday_na_43Entities2.GetContext().ServicePhotoes.Where(p => p.ServiceID == listView_images.SelectedIndex+1).Select(p => p.PhotoPath).FirstOrDefault().ToString();
 
             pageWin.textBox_mainImagePath.Text = findRec;
             pageWin.image.Source = (ImageSource)imageSourceConverter.ConvertFrom(findRec);
@@ -56,15 +56,15 @@ namespace isis_lab_1
             {
                 var fileName = ofd.FileName;
                 service_photo.PhotoPath = System.IO.Path.Combine("Resources\\", System.IO.Path.GetFileName(fileName));
-                service_photo.ServiceID = poday_na_43Entities1.GetContext().ServicePhotoes.Count() + 1;
+                service_photo.ServiceID = poday_na_43Entities2.GetContext().ServicePhotoes.Count() + 1;
                 System.IO.File.Copy(fileName, service_photo.PhotoPath);
                 System.IO.File.Copy(fileName, System.IO.Path.Combine("..\\..\\Resources\\", System.IO.Path.GetFileName(fileName)));
-                poday_na_43Entities1.GetContext().ServicePhotoes.Add(service_photo);
+                poday_na_43Entities2.GetContext().ServicePhotoes.Add(service_photo);
                 try
                 {
-                    poday_na_43Entities1.GetContext().SaveChanges();
-                    poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                    listView_images.ItemsSource = poday_na_43Entities1.GetContext().ServicePhotoes.ToList();
+                    poday_na_43Entities2.GetContext().SaveChanges();
+                    poday_na_43Entities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                    listView_images.ItemsSource = poday_na_43Entities2.GetContext().ServicePhotoes.ToList();
                 }
                 catch (Exception ex)
                 {

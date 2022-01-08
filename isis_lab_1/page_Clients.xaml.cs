@@ -23,15 +23,23 @@ namespace isis_lab_1
         public page_Clients()
         {
             InitializeComponent();
-            dataGrid.ItemsSource = poday_na_43Entities1.GetContext().Clients.ToList();
+            dataGrid.ItemsSource = poday_na_43Entities2.GetContext().Clients.ToList();
+        }
+
+        public bool is_page_visible(Visibility vis)
+        {
+            if (vis == Visibility.Visible) 
+                return true;
+            else
+                return false;
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (Visibility == Visibility.Visible)
+            if (is_page_visible(Visibility))
             {
-                poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                dataGrid.ItemsSource = poday_na_43Entities1.GetContext().Clients.ToList();
+                poday_na_43Entities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                dataGrid.ItemsSource = poday_na_43Entities2.GetContext().Clients.ToList();
             }
         }
 
@@ -53,10 +61,10 @@ namespace isis_lab_1
             {
                 try
                 {
-                    poday_na_43Entities1.GetContext().Clients.RemoveRange(clientsForRemove);
-                    poday_na_43Entities1.GetContext().SaveChanges();
+                    poday_na_43Entities2.GetContext().Clients.RemoveRange(clientsForRemove);
+                    poday_na_43Entities2.GetContext().SaveChanges();
                     MessageBox.Show("Positions successefully removed.");
-                    dataGrid.ItemsSource = poday_na_43Entities1.GetContext().Clients.ToList();
+                    dataGrid.ItemsSource = poday_na_43Entities2.GetContext().Clients.ToList();
                 } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message.ToString());

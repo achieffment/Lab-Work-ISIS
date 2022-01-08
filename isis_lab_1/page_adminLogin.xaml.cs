@@ -25,9 +25,17 @@ namespace isis_lab_1
             InitializeComponent();
         }
 
+        public bool pass_check(String password)
+        {
+            if (password == "0000")
+                return true;
+            else
+                return false;
+        }
+
         private void btn_accept_Click(object sender, RoutedEventArgs e)
         {
-            if (passwordBox_input.Password.Contains("0000"))
+            if (pass_check(passwordBox_input.Password.ToString()))
             {
                 Manager.isVisibleAdminPage = true;
                 Manager.MainFrame.Navigate(new page_new_Services_Admin());

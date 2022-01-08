@@ -17,10 +17,10 @@ namespace isis_lab_1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.ProductPhotoes = new HashSet<ProductPhoto>();
-            this.ProductSales = new HashSet<ProductSale>();
+            this.ProductPhoto = new HashSet<ProductPhoto>();
+            this.ProductSale = new HashSet<ProductSale>();
             this.Product1 = new HashSet<Product>();
-            this.Products = new HashSet<Product>();
+            this.Product2 = new HashSet<Product>();
         }
     
         public int ID { get; set; }
@@ -33,12 +33,12 @@ namespace isis_lab_1
     
         public virtual Manufacturer Manufacturer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductPhoto> ProductPhotoes { get; set; }
+        public virtual ICollection<ProductPhoto> ProductPhoto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSale> ProductSales { get; set; }
+        public virtual ICollection<ProductSale> ProductSale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Product1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Product2 { get; set; }
     }
 }

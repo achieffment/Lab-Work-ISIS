@@ -13,20 +13,20 @@ namespace isis_lab_1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class poday_na_43Entities1 : DbContext
+    public partial class poday_na_43Entities2 : DbContext
     {
-        public static poday_na_43Entities1 _context;
-        
-        public poday_na_43Entities1()
-            : base("name=poday_na_43Entities1")
+        public static poday_na_43Entities2 _context;
+
+        public poday_na_43Entities2()
+            : base("name=poday_na_43Entities2")
         {
         }
-    
-        public static poday_na_43Entities1 GetContext()
+
+        public static poday_na_43Entities2 GetContext()
         {
             if (_context == null)
             {
-                _context = new poday_na_43Entities1();
+                _context = new poday_na_43Entities2();
             }
             return _context;
         }
@@ -42,7 +42,7 @@ namespace isis_lab_1
         public virtual DbSet<Gender> Genders { get; set; }
         public virtual DbSet<Manufacturer> Manufacturers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductPhoto> ProductPhotoes { get; set; }
+        public virtual DbSet<ProductPhoto> ProductPhotos { get; set; }
         public virtual DbSet<ProductSale> ProductSales { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServicePhoto> ServicePhotoes { get; set; }

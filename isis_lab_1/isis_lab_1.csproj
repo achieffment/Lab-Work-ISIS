@@ -76,10 +76,20 @@
     <Compile Include="ClientService.cs">
       <DependentUpon>db_main.tt</DependentUpon>
     </Compile>
+    <Compile Include="db_main.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_main.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="db_main.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_main.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db_main.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_main.edmx</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
       <DependentUpon>db_main.tt</DependentUpon>
@@ -142,16 +152,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="db_main.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_main.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="db_main.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_main.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -297,6 +297,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="service_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="db_main.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>db_main.edmx</DependentUpon>
@@ -307,7 +310,6 @@
       <DependentUpon>db_main.edmx</DependentUpon>
       <LastGenOutput>db_main.cs</LastGenOutput>
     </Content>
-    <Resource Include="service_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

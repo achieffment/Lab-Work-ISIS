@@ -28,7 +28,7 @@ namespace isis_lab_1
         {
             InitializeComponent();
 
-            var records = poday_na_43Entities1.GetContext().ClientServices.ToList();
+            var records = poday_na_43Entities2.GetContext().ClientServices.ToList();
             records = records.OrderByDescending(p => p.StartTime).ToList();
             lstView_records = listView_records;
             listView_records.ItemsSource = records;
@@ -45,8 +45,8 @@ namespace isis_lab_1
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            poday_na_43Entities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            lstView_records.ItemsSource = poday_na_43Entities1.GetContext().ClientServices.ToList();
+            poday_na_43Entities2.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            lstView_records.ItemsSource = poday_na_43Entities2.GetContext().ClientServices.ToList();
 
             ButtonAutomationPeer peer = new ButtonAutomationPeer(btn_start);
             IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
@@ -109,15 +109,15 @@ namespace isis_lab_1
                 //  textBlock_serviceId
 
                 int findServiceId = Convert.ToInt32(textBlock_serviceId.Text);
-                textBlock_serviceName.Text = poday_na_43Entities1.GetContext().Services.Where(p => p.ID == findServiceId).Select(p => p.Title).FirstOrDefault().ToString();
+                textBlock_serviceName.Text = poday_na_43Entities2.GetContext().Services.Where(p => p.ID == findServiceId).Select(p => p.Title).FirstOrDefault().ToString();
 
                 int findClientId = Convert.ToInt32(textBlock_clientId.Text);
-                string fio = poday_na_43Entities1.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.FirstName).FirstOrDefault().ToString();
-                fio += " " + poday_na_43Entities1.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.LastName).FirstOrDefault().ToString();
-                fio += " " + poday_na_43Entities1.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Patronymic).FirstOrDefault().ToString();
+                string fio = poday_na_43Entities2.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.FirstName).FirstOrDefault().ToString();
+                fio += " " + poday_na_43Entities2.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.LastName).FirstOrDefault().ToString();
+                fio += " " + poday_na_43Entities2.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Patronymic).FirstOrDefault().ToString();
                 textBlock_fio.Text = fio;
-                textBlock_email.Text = poday_na_43Entities1.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Email).FirstOrDefault().ToString();
-                textBlock_phone.Text = poday_na_43Entities1.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Phone).FirstOrDefault().ToString();
+                textBlock_email.Text = poday_na_43Entities2.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Email).FirstOrDefault().ToString();
+                textBlock_phone.Text = poday_na_43Entities2.GetContext().Clients.Where(p => p.ID == findClientId).Select(p => p.Phone).FirstOrDefault().ToString();
 
                 DateTime dt = DateTime.ParseExact(textBlock_startTime.Text, "yyyy-MM-dd HH:mm:ss.000", System.Globalization.CultureInfo.InvariantCulture);
                 if (dt.Date == DateTime.Today || dt.Date == DateTime.Today.AddDays(1))

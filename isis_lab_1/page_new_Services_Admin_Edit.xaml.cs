@@ -57,7 +57,7 @@ namespace isis_lab_1
                 errors.AppendLine("Title can not be empty.");
             } else
             {
-                if (poday_na_43Entities1.GetContext().Services.Where(p => p.Title == _currentService.Title).FirstOrDefault() != null)
+                if (poday_na_43Entities2.GetContext().Services.Where(p => p.Title == _currentService.Title).FirstOrDefault() != null)
                     errors.AppendLine("Title must be uniq.");
             }
 
@@ -85,11 +85,11 @@ namespace isis_lab_1
             {
                 if (_currentService.ID == 0)
                 {
-                    poday_na_43Entities1.GetContext().Services.Add(_currentService);
+                    poday_na_43Entities2.GetContext().Services.Add(_currentService);
                 }
                 try
                 {
-                    poday_na_43Entities1.GetContext().SaveChanges();
+                    poday_na_43Entities2.GetContext().SaveChanges();
                     Manager.isVisibleAdminPage = true;
                     Manager.MainFrame.GoBack();
                 }

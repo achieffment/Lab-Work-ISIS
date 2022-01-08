@@ -30,7 +30,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClientID" Type="int" Nullable="false" />
     <Property Name="ServiceID" Type="int" Nullable="false" />
-    <Property Name="StartTime" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="50" />
     <Property Name="Comment" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="DocumentByService">

@@ -17,8 +17,8 @@ namespace isis_lab_1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Client()
         {
-            this.ClientServices = new HashSet<ClientService>();
-            this.Tags = new HashSet<Tag>();
+            this.ClientService = new HashSet<ClientService>();
+            this.Tag = new HashSet<Tag>();
         }
     
         public int ID { get; set; }
@@ -34,8 +34,8 @@ namespace isis_lab_1
     
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientService> ClientServices { get; set; }
+        public virtual ICollection<ClientService> ClientService { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tag { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище poday_na_43ModelContainer" CdmEntityContainer="poday_na_43Entities1">
-    <EntitySetMapping Name="Clients">
+  <EntityContainerMapping StorageEntityContainer="Хранилище poday_na_43ModelContainer" CdmEntityContainer="poday_na_43Entities2">
+    <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="poday_na_43Model.Client">
         <MappingFragment StoreEntitySet="Client">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -17,7 +17,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ClientServices">
+    <EntitySetMapping Name="ClientService">
       <EntityTypeMapping TypeName="poday_na_43Model.ClientService">
         <MappingFragment StoreEntitySet="ClientService">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -28,7 +28,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DocumentByServices">
+    <EntitySetMapping Name="DocumentByService">
       <EntityTypeMapping TypeName="poday_na_43Model.DocumentByService">
         <MappingFragment StoreEntitySet="DocumentByService">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -37,7 +37,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Genders">
+    <EntitySetMapping Name="Gender">
       <EntityTypeMapping TypeName="poday_na_43Model.Gender">
         <MappingFragment StoreEntitySet="Gender">
           <ScalarProperty Name="Code" ColumnName="Code" />
@@ -45,7 +45,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Manufacturers">
+    <EntitySetMapping Name="Manufacturer">
       <EntityTypeMapping TypeName="poday_na_43Model.Manufacturer">
         <MappingFragment StoreEntitySet="Manufacturer">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -54,7 +54,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Products">
+    <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="poday_na_43Model.Product">
         <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -67,7 +67,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProductPhotoes">
+    <EntitySetMapping Name="ProductPhoto">
       <EntityTypeMapping TypeName="poday_na_43Model.ProductPhoto">
         <MappingFragment StoreEntitySet="ProductPhoto">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -76,7 +76,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProductSales">
+    <EntitySetMapping Name="ProductSale">
       <EntityTypeMapping TypeName="poday_na_43Model.ProductSale">
         <MappingFragment StoreEntitySet="ProductSale">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -87,7 +87,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Services">
+    <EntitySetMapping Name="Service">
       <EntityTypeMapping TypeName="poday_na_43Model.Service">
         <MappingFragment StoreEntitySet="Service">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -100,7 +100,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ServicePhotoes">
+    <EntitySetMapping Name="ServicePhoto">
       <EntityTypeMapping TypeName="poday_na_43Model.ServicePhoto">
         <MappingFragment StoreEntitySet="ServicePhoto">
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -109,7 +109,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tags">
+    <EntitySetMapping Name="Tag">
       <EntityTypeMapping TypeName="poday_na_43Model.Tag">
         <MappingFragment StoreEntitySet="Tag">
           <ScalarProperty Name="ID" ColumnName="ID" />
